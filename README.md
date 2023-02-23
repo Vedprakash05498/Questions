@@ -326,3 +326,65 @@ The average is: 6.0
 
 You can replace the list of numbers with your own list to find the average of any set of numbers.
 
+
+# Question 5
+
+"counting apple problems" and the problem is as follows:
+
+There are n people with two types of food, apples and oranges. Each person can either have an apple or an orange or none at all. How many different ways
+
+are there for the distribution of apples and oranges among the n people?
+
+To solve this problem, we can use the concept of permutations and combinations.
+
+Let's say there are k people who have been given apples. Then, the number of people who have been given oranges would be n - k. We can distribute apples
+
+among n people in nCk ways (n choose k). And since each of these ways corresponds to a unique distribution of oranges as well, we need to multiply nCk by
+
+(n-k)C(n-k) to get the total number of distributions.
+
+Therefore, the total number of distributions of apples and oranges among n people is:
+
+Σ (nCk * (n-k)C(n-k)), k=0 to n
+
+where Σ denotes summation. This expression can be simplified using the identity nCk = nC(n-k), to get:
+
+Σ (nCk)², k=0 to n/2
+
+where n/2 denotes the integer division of n by 2.
+
+So the final answer to the problem is the summation of nCk squared for k ranging from 0 to n/2.
+
+
+
+import math
+
+def count_distributions(n):
+
+    count = 0
+    
+    for k in range(n//2 + 1):
+    
+        count += math.comb(n, k)**2
+	
+    return count
+
+# Example usage
+n = 5
+
+distributions = count_distributions(n)
+
+print(f"There are {distributions} ways to distribute apples and oranges among {n} people.")
+
+
+
+
+In this code, we use the math.comb() function to calculate the binomial coefficient (i.e., n choose k) and then sum up the squares of these coefficients
+
+for k ranging from 0 to n/2. The // operator performs integer division in Python 3, which is used to ensure that we only iterate over k values up to n/2.
+
+Note that this code assumes that n is a non-negative integer. If n can be negative or a non-integer, you may need to add some additional error checking to
+
+the code.
+
+
