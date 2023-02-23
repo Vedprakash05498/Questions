@@ -368,8 +368,7 @@ def count_distributions(n):
         count += math.comb(n, k)**2
 	
     return count
-
-
+    
 n = 5
 
 distributions = count_distributions(n)
