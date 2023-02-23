@@ -369,7 +369,7 @@ def count_distributions(n):
 	
     return count
 
-# Example usage
+
 n = 5
 
 distributions = count_distributions(n)
