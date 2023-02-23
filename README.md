@@ -282,3 +282,47 @@ add 1 to it (to account for the new square with matrix[i][j] as its bottom-right
 
 Finally, we sum up all the values in the dp matrix to obtain the total count of square submatrices with all ones in the input matrix.
 
+
+
+
+
+
+
+
+
+# Question 4
+
+# Python code to find the average of a list of numbers:
+
+def find_average(numbers):
+
+    # Check if the list is empty
+    
+    if not numbers:
+    
+        return 0
+    
+    # Calculate the sum of the numbers
+    
+    total = sum(numbers)
+    
+    # Calculate the average
+    
+    average = total / len(numbers)
+    
+    return average
+
+To use this function, simply pass in a list of numbers as an argument, like this:
+
+numbers = [2, 4, 6, 8, 10]
+
+average = find_average(numbers)
+
+print("The average is:", average)
+
+This will output:
+
+The average is: 6.0
+
+You can replace the list of numbers with your own list to find the average of any set of numbers.
+
